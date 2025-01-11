@@ -1,57 +1,38 @@
 import React from 'react';
-import { Spotlight } from './ui/Spotlight';
 import { TextGenerateEffect } from './ui/TextGenerateEffect';
 import MagicButton from './ui/MagicButton';
-import { FaLocationArrow } from 'react-icons/fa';
 import { GoArrowRight } from 'react-icons/go';
 
 const Hero = () => {
   return (
-    <div className="pb-20 pt-36">
-      <div>
-        <Spotlight
-          className="-top-40 -left-10 md:-left-32 md:-top-20 h-screen"
-          fill="white"
-        />
-        <Spotlight
-          className="-top-40 -left-full h-[80vh] w-[50vw]"
-          fill="cyan"
-        />
-        <Spotlight
-          className="-top-28 left-80 h-[80vh] w-[50vw]"
-          fill="blue"
-        />
-      </div>
-
-      <div
-        className="h-screen w-full dark:bg-black-100 
-      bg-white dark:bg-grid-white/[0.03] bg-grid-black/[0.2] 
-       flex items-center justify-center relative top-0 left-0">
+    <header className="relative pb-20 pt-36 bg-gradient-to-b from-gray-100 to-white dark:from-black-100 dark:to-black">
+      <div className="container mx-auto h-full">
+        {/* Background spotlight effect */}
         <div
-          className="absolute pointer-events-none inset-0 flex 
-        items-center justify-center dark:bg-black-100 bg-white 
-        [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
-        <div className="flex justify-center relative my-20 z-10">
-          <div
-            className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col
-            items-center justify-center">
-            <h2
-              className="uppercase tracking-widest text-xs text-center
-                text-blue-100 max-w-80">
-              Dynamic web Next.js
-            </h2>
+          className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100
+         bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_15%,black)]"></div>
 
+        {/* Hero Content */}
+        <section className="relative z-10 flex flex-col xl:flex-row items-center justify-between">
+          {/* Left Content */}
+          <div className="max-w-[89vw] md:max-w-2xl lg:max-w-[60vw] flex flex-col">
+            {/* Dynamic Header Text */}
             <TextGenerateEffect
-              className="text-center text-[40px] md:text-5xl lg:text-6xl"
-              words="My Legendary Ultimate Full Stack Portfolio"
+              className="text-left text-[40px] md:text-5xl lg:text-6xl font-bold leading-tight"
+              words="My Legendary Ultimate Full Stack Developer Portfolio"
             />
 
-            <p className="text-center md:tracking-wider mb-4 text-sm md:text-2xl">
-              Hi, I'm Jim, a Full Stack Developer based in
-              Philippines
+            {/* Introduction */}
+            <p className="text-left text-sm md:text-2xl mt-4 mb-8">
+              Hi, I'm{' '}
+              <span className="font-semibold">Jim</span>, a
+              Full Stack Developer based in the Philippines.
             </p>
 
-            <a href="#about">
+            {/* Call to Action Button */}
+            <a
+              href="#about"
+              aria-label="Navigate to About section">
               <MagicButton
                 title="Show my work"
                 icon={<GoArrowRight />}
@@ -59,9 +40,19 @@ const Hero = () => {
               />
             </a>
           </div>
-        </div>
+
+          {/* Right Content - Photo */}
+          <div className="flex items-center justify-center mt-12 xl:mt-0">
+            <div className="w-48 h-48 md:w-60 md:h-60 lg:w-72 lg:h-72 bg-gray-300 dark:bg-gray-700 rounded-full overflow-hidden">
+              {/* Replace 'Insert Photo' with an actual image */}
+              <p className="text-center text-gray-500 dark:text-gray-400 text-sm flex items-center justify-center h-full">
+                Insert Photo Here
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
-    </div>
+    </header>
   );
 };
 
